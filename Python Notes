@@ -1,0 +1,67 @@
+Python Notes 
+
+Declaring Variables
+To declare a varaible type the variable name you wish follows by = and then the value of that variable, if that variable is a string you must enclose this in quotes
+			eg) variable = 2 
+				variable = "This is a string" 
+
+Lists
+Lists are done in similiar way to variables as you declare your list name followed by a = but values are stored inside square brackets [] with a comma after each and again if the value is a string it must be enclosed in quotes 
+			eg) lst = ["List item 1", "List item 2"]
+
+Dictionaries
+Dictionaries are similar to lists but they contain a key and a value assigned to that key, to declare a dictionary you name your dictionary followed by a = then in curly brackets{} you put your key followed by a colon and then the value to that key and a comma to seperate keys
+			eg) dictionary = {"key 1" : 1, "key 2" : 2 }
+
+Print Statements
+Print Statements are done by simply typing print followed by what you want to print. If you are printing a string you must enclose it in quotations. If you are printing variable you just include the varible name with no quotations, although if you want to print a variable and a string you must convert the variable to a string using str()
+			
+			eg) variable = 2 
+				print "The variable is " + variable    <------ This would return an error
+
+				variable = 2
+				print "The variable is " + str(variable)  <----- This would return 'The variable is 2'
+
+If Statements
+If statements preform an action or series of actions if the if statement is True, They are useful as decisions in code and can be used as a loop.
+			eg) variable = int(raw_input("Enter a number: "))
+				if variable == 5:
+					print "The number is 5"
+				elif variable == 4:
+					print "The number is 4"
+				else:
+					print "I do not know"
+
+While Statements 
+While statements are similiar to if statements only they continue to operate while the condition is True, you must be careful not to make an infinte loop as this could crash your computer. So it is important to ensure that the condition is changed in every loop until the condition eventually returns False. Alternatively you can stop your loop by including a break statement 
+			eg) count = 0 
+				while count < 10:
+					print count 	<-------- This would return numbers 1 to 9 each on a new line 
+					count += 1 
+------------------------------------------------------------------------------------------------------------------------------------------------
+				# Importing randint function from random 
+				from random import randint 
+
+				# Setting number to a random number between 1 and 10 inclusively 
+				number = randint(1, 10)
+
+				# Declaring guesses
+				guesses_left = 3 
+
+				while guesses_left > 0:
+					guess = int(raw_imput("Guess a number: "))
+					if guess == number:  <----- Checking if guess is the same as number
+						print "You Win!"
+						break			<------ Break command to stop the loop 
+					guesses_left -= 1 
+				else:					<------ Printing a string when no guessses remain 
+					print "You Lose"
+
+Iterating through a list 
+To cycle through items in a list you use the for command for is similiar to a while command only that it will finish when it has run through list or dictionary 
+			eg) lst = ["Green", "Red", "Black", "Purple"]
+				for i in lst:
+  					if i == "Purple":
+    				print "This is your favorite colour: " + i 
+  				else:
+   					print i 
