@@ -1,0 +1,42 @@
+def reverse(text):
+    word = ""					<--- Setting word to a blank string
+    l = len(text) - 1			<--- Setting l to the last character in the text NOTE: - 1 is because python begins counting at 0
+    while l >= 0:				<--- Making a loop that executes while l is greater than or equal to 0 
+        word = word + text[l]	<--- Adding text[l] to word (if word is 'hello' the first round would be hello[4] which is o
+        l -= 1					<--- Decreasing l by 1 
+    return word 				<--- Returning adjusted word
+  
+print reverse("Hello World")
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+def anti_vowel(text):
+    result = ""					<--- Setting result to a blank string
+    vowels = "ieaouIEAOU"		<--- Setting vowels to a string containing upper case and lower case vowels
+    for i in text:				<--- For every character(i) in text(input)
+          if i not in vowels:	<--- Check to see if i is NOT in vowels string
+            result += 			<--- If it is not add that character(i) to the result
+    return result 				<--- Returning the adjusted total
+print anti_vowel("hello book")	<--- Printing the result of calling on function anti_vowel("hello book") which would print 'hll bk'
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+def digit_sum(n):
+  total = 0				<--- Setting total to 0 
+  string_n = str(n)		<--- Setting string_n to be n converted to a string 
+  for char in string_n:	<--- For every character(char) in string_n
+    total += int(char) 	<--- Adjusting total to be what it was before plus the current character converted back to an interger resulting 
+ 							 in 0 + 1 returning 1 in the first case but the next case would be 1 + 2 returning 3 etc
+  return total			<--- Returning the adjusting total 		
+
+print digit_sum(1234)	<--- Printing the result of calling on function digit_sum(1234) which is 10 (1+2+3+4)
+
+#Alternate Solution:
+
+#def digit_sum(n):
+#  total = 0
+#  while n > 0:
+#    total += n % 10
+#    n = n // 10
+#  return total
+  
+print digit_sum(1234)
+----------------------------------------------------------------------------------------------------------------------------------------------
